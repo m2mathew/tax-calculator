@@ -3,19 +3,26 @@
 <head>
 	<title>Tax Calculator</title>
 
-	<link rel="stylesheet" type="text/css" href="./styles/main.sass.scss">
+	<link rel="stylesheet" type="text/css" href="./styles/main.sass.css">
 </head>
 <body>
 
-	<main id="main"></main>
+	<main id="main">
+		<form>
+			<input id="amount" type="text" placeholder="Order amount">
+			<input id="state" type="text" placeholder="State where purchase was made">
+			<button>SUBMIT</button>
+		</form>
+		<div id="subtotal"></div>
+		<div id="tax"></div>
+		<div id="total"></div>
+
+	</main>
 
 	<footer class="footer">
-        <span>A creation by</span>
-        <a href="http://www.drumsensei.com"><div>Mike Mathew</div></a>
-        <span>for</span>
-        <a href="http://www.theironyard.com">The Iron Yard</a>
+        <p>A creation by <a href="http://www.drumsensei.com">Mike Mathew</a> for <a href="http://www.theironyard.com"> The Iron Yard</a></p>
     </footer>
 
-	<script type="text/javascript" src="./scripts/main.js"></script>
+	<script type="text/javascript" src="./scripts/bundle.js"></script>
 </body>
 </html>

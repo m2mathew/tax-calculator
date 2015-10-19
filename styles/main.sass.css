@@ -1,0 +1,36 @@
+body {
+  background-color: #A9E1F5;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh; }
+
+main {
+  flex: 1; }
+  main #subtotal, main #tax, main #total {
+    padding: 2em;
+    font-size: 1.25em;
+    color: #0F2859; }
+
+input {
+  width: 75%;
+  line-height: 1.6;
+  color: #081026;
+  margin: 3em;
+  padding: 1em;
+  font-size: 1.25em; }
+
+button {
+  background-color: #BCC3DC;
+  color: #000;
+  font-size: 1.25em;
+  padding: 1em; }
+
+footer {
+  background-color: #D5E5F2; }
+  footer p {
+    padding-left: 2em; }
+    footer p a {
+      text-decoration: none;
+      color: #0F2859; }
+      footer p a:hover {
+        color: #5EA4BF; }
