@@ -13,12 +13,6 @@ $(document).ready(function() {
 
 	let amount, state, tax, total, newTax = null;
 
-	// use an if statement, not an else statement
-
-	// round money up to nearest cent
-
-	// use a simple output statement at the end to display results
-
 	let $amount = $('#amount');
 	let $state = $('#state');
 	let $button = $('button');
@@ -26,7 +20,7 @@ $(document).ready(function() {
 	let $tax = $('#tax');
 	let $total = $('#total');
 
-	$button.on('click', function(e) {
+	$('form').on('submit', function(e) {
 		e.preventDefault();
 
 		amount = $amount.val();
@@ -38,6 +32,10 @@ $(document).ready(function() {
 
 		let total = parseFloat(amount);
 
+		$total.text('Total due: $' + amount);
+		$subtotal.text('');
+		$tax.text('');
+
 		if (state === 'WI') {
 			total = total + newTax;
 
@@ -45,10 +43,5 @@ $(document).ready(function() {
 			$tax.text('Tax rate: ' + tax + '%');
 			$total.text('Total due: $' + total.toFixed(2));
 		}
-
-		if (state !== 'WI') {
-			$total.text('Total due: $' + amount);
-		}
-
 	});
 });

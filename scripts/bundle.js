@@ -9234,12 +9234,6 @@ var _jquery2 = _interopRequireDefault(_jquery);
 	    total = undefined,
 	    newTax = null;
 
-	// use an if statement, not an else statement
-
-	// round money up to nearest cent
-
-	// use a simple output statement at the end to display results
-
 	var $amount = (0, _jquery2['default'])('#amount');
 	var $state = (0, _jquery2['default'])('#state');
 	var $button = (0, _jquery2['default'])('button');
@@ -9247,7 +9241,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 	var $tax = (0, _jquery2['default'])('#tax');
 	var $total = (0, _jquery2['default'])('#total');
 
-	$button.on('click', function (e) {
+	(0, _jquery2['default'])('form').on('submit', function (e) {
 		e.preventDefault();
 
 		amount = $amount.val();
@@ -9259,16 +9253,16 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 		var total = parseFloat(amount);
 
+		$total.text('Total due: $' + amount);
+		$subtotal.text('');
+		$tax.text('');
+
 		if (state === 'WI') {
 			total = total + newTax;
 
 			$subtotal.text('Original Amount: $' + amount);
 			$tax.text('Tax rate: ' + tax + '%');
 			$total.text('Total due: $' + total.toFixed(2));
-		}
-
-		if (state !== 'WI') {
-			$total.text('Total due: $' + amount);
 		}
 	});
 });
